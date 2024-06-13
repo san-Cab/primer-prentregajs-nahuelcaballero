@@ -17,8 +17,26 @@ function pedirApuesta() {
     return num
 }
 
+let jugadores = []
+class JugadorDados {
+    constructor(nombre, edad, genero) {
+        this.nombre = prompt('Igrese su nombre').toLowerCase()
+        this.edad = Number(prompt('ingrese su edad'))
+        this.genero = prompt('Ingrese su genero').toLowerCase()
+    }
+    saludar() {
+        if (this.edad < 18) {
+            alert('Las apuestas estan prohibidas para menores de edad')
 
-alert("Te damos la bienvenida a Dados, un juego de apuestas donde comenzas ganando vos porque te regalamos un bonus de bienvenida de $7500 pesos. Vamos a jugar!")
+        } else {
+            alert('Hola ' + this.nombre + " Te damos la bienvenida a Dados, un juego de apuestas donde comenzas ganando vos porque te regalamos un bonus de bienvenida de $7500 pesos. Vamos a jugar!")
+        }
+        jugadores.push(JugadorDados)
+    }
+}
+let jugador = new JugadorDados()
+jugador.saludar()
+
 while (true && saldo > 0) {
 
     let apuesta = pedirApuesta()
